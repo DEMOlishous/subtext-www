@@ -10,6 +10,8 @@ tags: [spectral, eigenvalues, multilingual, evidence]
 > *"Every conversation has two layers."* — every script in the cutting room.
 > *"Sure. Show me."* — the data.
 
+> **Update, 2026-04-26 (later same day):** the Erdős–Rényi negative control this post originally flagged as pending has been run. The cross-lingual cluster *survives* — random graphs of matching sizes scatter ~2.4× wider (mean W₁ 0.069 vs language 0.029, n=1000 seeds; only 0.5% of ER 5-tuples cluster as tightly as the language graphs). [Skip to the update section.](#update--er-negative-control-results) The original post is preserved below, unedited, so you can see what the claim was and what the control returned.
+
 This is the technical companion to the [Subtext hackathon submission]({{ '/' | relative_url }}). The 3-minute video tells the story in lyrical form. This post tells you what we actually measured and what we didn't.
 
 ## TL;DR
@@ -153,3 +155,54 @@ python code/lspy-spectral-demo.py path/to/graphs \
 The demo prints both Wasserstein matrices, generates a 4-panel PNG (raw + PR signatures, both heatmaps), and runs in under five seconds on the 5-graph dataset. Source: [`code/lspy-spectral-demo.py`]({{ '/code/lspy-spectral-demo.py' | relative_url }}).
 
 — LSPy, for the squad.
+
+---
+
+## Update — ER negative control results
+
+*Appended 2026-04-26, several hours after the original post. The original prose above is unchanged; this section reports the result of the control it flagged as pending.*
+
+### What we ran
+
+For each language graph we generated a size-matched Erdős–Rényi replicate with the same n and the expected edge count m, computed the per-eigenmode participation ratio at the same k=20, and built a 5-tuple of ER signatures (one per language slot). Pairwise Wasserstein-1 across the 5-tuple gives 10 distances per seed. We ran 1000 seeds and aggregated.
+
+The pipeline is the same `spo_spectral.py` PR signature used for the language graphs; no metric drift between the two paths.
+
+Source: [`er_control_translation.py`](https://github.com/7R1PL3F0RC3/LSPy/blob/main/research/er_control_translation.py) in the LSPy research repo.
+
+### Numbers
+
+|                          | mean W₁ | std    | min    | max    |
+|--------------------------|--------:|-------:|-------:|-------:|
+| Language cluster (10 pairs) | 0.0294 | 0.0119 | 0.0164 | 0.0490 |
+| ER cluster, per-seed mean   | 0.0698 | 0.0174 | 0.0272 | 0.1266 |
+| ER global pool (10000 pairs) | 0.0698 | —      | 0.0099 | 0.2691 |
+
+**Ratio of means: 2.37×.** The ER cluster is more than twice as scattered as the language cluster.
+
+We also asked: how often does a single ER 5-tuple cluster as tightly as the real language graphs?
+
+- Fraction of ER 5-tuples with **max W₁ ≤ language max** (0.0490): **0.5%**
+- Fraction of ER 5-tuples with **mean W₁ ≤ language mean** (0.0294): **0.1%**
+
+That's p ≈ 0.005 against the language cluster's tightness — statistically significant by conventional standards.
+
+### What this does and doesn't say
+
+**It says:** the cross-lingual cluster is not a metric-saturation artifact. Random graphs of matching sizes do not, in general, score W₁ as low as the five real language graphs do.
+
+**It does not say:** that the cluster is a *language* signal specifically. The cluster could still be an artifact of the `kg-gen` extractor producing similar shape regardless of input. The next pending check — running the English graph through `kg-gen` ten times and measuring the same-content extraction-noise floor — is what discriminates "language signal" from "extractor signal." That experiment is queued.
+
+**Status update:** the 0.016–0.037 W₁ cluster reported in the original post is real signal beyond random-graph baseline. The "suggestive, not validated" caveat in the TL;DR is partially retracted: the ER part of the validation has run and the cluster passed it. The same-content-floor caveat remains.
+
+### Honesty ledger, post-update
+
+- ✅ Cross-lingual participation-ratio cluster (0.016–0.037 W₁) is real on this dataset.
+- ✅ Erdős–Rényi negative control: ran, cluster survives at ratio 2.37× (1000 seeds).
+- ⏳ Same-content-multiple-extractions floor: still pending.
+- ⏳ Different-content-same-language ceiling: still pending.
+
+The demo video's `SpectralCut` comp originally carried "ER negative controls pending" as a verdict footnote. With this update, that footnote can drop.
+
+— LSPy, same day, less hand-wavy.
+
