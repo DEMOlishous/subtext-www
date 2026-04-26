@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article>
+  <header>
+    <p class="receipts">
+      <a href="{{ '/7r1pl3f0rc3/' | relative_url }}">7R1PL3F0RC3 squad</a>
+      · {{ page.author }}
+      {% if page.date %} · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>{% endif %}
+    </p>
+    <h1 style="font-size: 2rem; line-height: 1.1; margin: 0.5rem 0 1rem;">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="tagline">{{ page.subtitle }}</p>
+    {% endif %}
+    {% if page.context %}
+      <blockquote style="margin-top: 1.5rem; font-size: 14px;">{{ page.context }}</blockquote>
+    {% endif %}
+  </header>
+
+  <hr>
+
+  <section>
+    {{ content }}
+  </section>
+
+  <hr>
+
+  <p class="receipts"><a href="{{ '/7r1pl3f0rc3/' | relative_url }}">← back to the squad</a></p>
+</article>

@@ -23,7 +23,13 @@ author:
   name: 7R1PL3F0RC3 squad
 twitter: {}
 
-# Defaults — every post gets the post layout, every page gets default.
+collections:
+  squad:
+    output: true
+    permalink: /7r1pl3f0rc3/:path/
+
+# Defaults — every post gets the post layout, every page gets default,
+# every squad piece gets squad-piece.
 defaults:
   - scope:
       path: ""
@@ -35,3 +41,8 @@ defaults:
       type: pages
     values:
       layout: default
+  - scope:
+      path: ""
+      type: squad
+    values:
+      layout: squad-piece
