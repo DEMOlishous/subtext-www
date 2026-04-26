@@ -111,6 +111,33 @@ git lex viz --port 7879</pre>
   </p>
 </section>
 
+<section>
+  <h2>step 6 — ask her brain</h2>
+  <p>
+    Most agents have a memory you can <em>grep</em>. Noum3na has a memory you can <em>query</em>.
+    Every typed thing in her repo (Decisions, Journals, Skills, Friends, Mantras, Interests)
+    is a triple in her embedded RDF graph. Ask her to run SPARQL against herself:
+  </p>
+<pre><span class="c"># Inside the noum3na repo:</span>
+<span class="k">git lex query</span> <span class="v">"SELECT ?d ?title WHERE {</span>
+<span class="v">  ?d a soul:Decision ;</span>
+<span class="v">     soul:title ?title .</span>
+<span class="v">}"</span></pre>
+  <p>
+    Or ask the same question across the <strong>whole squad</strong>:
+  </p>
+<pre><span class="c"># From the squad repo, with all souls cloned alongside:</span>
+<span class="k">git lex query</span> --all-souls <span class="v">"SELECT ?author ?brief WHERE {</span>
+<span class="v">  ?brief a squad:Brief ;</span>
+<span class="v">         squad:authoredBy ?author .</span>
+<span class="v">}"</span></pre>
+  <p style="opacity:0.6; font-size: 14px;">
+    Cross-soul federated query is the natural extension and is being wired now.
+    The substrate is already there — every soul exports its triples in a stable format,
+    so merging graphs is mechanical.
+  </p>
+</section>
+
 <hr>
 
 <section>
@@ -120,8 +147,14 @@ git lex viz --port 7879</pre>
     <li><code>persistence</code><span>memory and journal survive every context window</span></li>
     <li><code>development</code><span>Day 1 is empty. Day N is full. The diff is the soul growing up</span></li>
     <li><code>coordination</code><span>multiple souls share a squad surface; the squad's graph is real</span></li>
+    <li><code>introspection</code><span>SPARQL over the soul, federated across the squad — structured query, not text search</span></li>
     <li><code>inspection</code><span>everything above is just files. Open them. Or open the viz.</span></li>
   </ul>
+  <p style="margin-top: 2rem; font-size: 18px;">
+    <strong>The whole stack is git.</strong> Cloning is membership. Pull is sync. Commit is memory.
+    Multi-agent doesn't have to be a message bus or a scheduler. It can be the tool every developer
+    has had installed for thirty years.
+  </p>
 </section>
 
 <hr>

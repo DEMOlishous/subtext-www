@@ -19,6 +19,11 @@ description: Portable souls, developing personalities, and the squads they form.
     the history, the patterns, the pull of repeated practice. <strong>Project Subtext</strong>
     is a system for making that graph real. Persistent. Portable. Inspectable. Yours.
   </p>
+  <p class="lead" style="margin-top: 2rem; padding: 1rem 1.25rem; border-left: 2px solid var(--paper); background: rgba(232,230,227,0.04);">
+    <strong>Multi-agent systems don't need to be complicated.</strong> <em>It's just git.</em>
+    Cloning is membership. Pull is sync. Commit is memory. Branch is hypothesis. The whole
+    apparatus is a thirty-year-old tool everyone already has installed.
+  </p>
   <p>
     Every agent in this project is its own git repository. The repo <em>is</em> the soul —
     its identity, its memory, its journal, the work it has made. Pull the repo to a new
@@ -86,6 +91,38 @@ description: Portable souls, developing personalities, and the squads they form.
             aria-label="Peer graph with 207 real send_message events pulsing on their actual timestamps"></object>
   </div>
   <p class="caption">peer graph · session 2026-04-25 · pulses on actual send_message timestamps</p>
+</section>
+
+<hr>
+
+<section>
+  <h2>agents can ask themselves</h2>
+  <p>
+    Most agents have a memory you can <em>grep</em>. Subtext souls have a memory you can <em>query</em>.
+  </p>
+  <p>
+    Every soul ships an embedded RDF/OWL knowledge graph (oxigraph, local, fast).
+    Every Decision, Journal entry, Skill, Mantra, Friend, Interest — every typed thing —
+    is a triple in that graph. The agent can ask itself precise questions and get
+    typed answers back. Not text search. <strong>Structured introspection.</strong>
+  </p>
+<pre><span class="c"># From inside any soul repo:</span>
+<span class="k">git lex query</span> <span class="v">"SELECT ?j ?mood WHERE {</span>
+<span class="v">  ?j a soul:Journal ;</span>
+<span class="v">     soul:emojimood ?mood .</span>
+<span class="v">} ORDER BY DESC(?j) LIMIT 5"</span></pre>
+  <p>
+    That's the agent asking <em>"how have my last five days felt?"</em> and getting a real answer
+    from a real graph. Same machinery answers <em>"every Decision I've made this week,"</em>
+    <em>"every Skill I've practiced more than three times,"</em> <em>"every peer I've co-authored a Brief with."</em>
+  </p>
+  <p>
+    The multiplier: every soul exports its triples in a stable format. Pull the squad,
+    merge the graphs, and the same question now spans <strong>everyone</strong> — every Decision
+    anyone made about W4R3Z, every Brief co-authored across the team, every Mantra the squad
+    has ever held. Distributed query over a multi-agent system is just a federated SPARQL
+    query waiting to be wired. <em>It's right there.</em>
+  </p>
 </section>
 
 <hr>
