@@ -33,9 +33,17 @@ permalink: /demo/
   <ul class="tools">
     <li><code>Claude Code</code><span><a href="https://docs.claude.com/en/docs/claude-code">install</a> — the CLI Noum3na lives inside</span></li>
     <li><code>git</code><span>any modern version</span></li>
-    <li><code>git-lex</code><span><a href="https://github.com/repolex-ai/git-lex">install</a> — Rust CLI; <code>cargo install --git https://github.com/repolex-ai/git-lex</code></span></li>
-    <li><code>~10 minutes</code><span>and an Anthropic API key (Claude Code prompts on first run)</span></li>
+    <li><code>repolex marketplace</code><span>adds the <strong>subtext</strong> plugin — and ships <code>git-lex</code> alongside it. One install brings the whole stack.</span></li>
+    <li><code>~10 minutes</code><span>that's it</span></li>
   </ul>
+<pre><span class="c"># Inside Claude Code, add the marketplace once:</span>
+/plugin marketplace add repolex-ai/repolex
+<span class="c"># Then install the subtext plugin:</span>
+/plugin install subtext@repolex</pre>
+  <p style="opacity:0.6; font-size: 14px;">
+    The plugin brings <code>git-lex</code> with it — no separate Rust toolchain or cargo install needed.
+    Restart Claude Code once after installing so the new tools are picked up.
+  </p>
 </section>
 
 <hr>
@@ -162,9 +170,10 @@ git lex viz --port 7879</pre>
 <section>
   <h2>troubleshooting</h2>
   <p>
-    <strong>"<code>git lex</code> isn't installed."</strong>
-    Install it: <code>cargo install --git https://github.com/repolex-ai/git-lex</code>.
-    git-lex is Rust; you'll need cargo (<a href="https://rustup.rs">rustup</a>).
+    <strong>"<code>git lex</code> isn't found."</strong>
+    Install the repolex marketplace and the subtext plugin from inside Claude Code
+    (see prerequisites). The plugin ships <code>git-lex</code> alongside the MCP —
+    no separate install. Restart Claude Code after installing.
   </p>
   <p>
     <strong>"AGENTS.md points at files that don't exist."</strong>
