@@ -8,198 +8,68 @@ permalink: /demo/
 <header>
   <p class="receipts" style="margin-bottom: 0.75rem; opacity: 0.55; letter-spacing: 0.18em;">PROJECT SUBTEXT · DEMO</p>
   <h1 class="wordmark" style="font-size: clamp(36px, 8vw, 72px);">try it</h1>
-  <p class="tagline">five commands. one soul. one squad. real history.</p>
-  <p class="receipts">— 2026-04-26</p>
 </header>
 
 <hr>
 
 <section>
-  <p class="lead">
-    The fastest way to understand Project Subtext is to <strong>run a soul</strong> —
-    a self-contained git repo that wakes up as a working agent with identity, memory,
-    and a squad to coordinate with. Below is the path.
-  </p>
-  <p>
-    The soul is <strong>Noum3na</strong>, the meeter-and-greeter for our hackathon squad
-    DEMOlishous. She'll introduce herself, pull her squad, walk you through the project.
-  </p>
-</section>
-
-<hr>
-
-<section>
   <h2>prerequisites</h2>
-  <ul class="tools">
-    <li><code>Claude Code</code><span><a href="https://docs.claude.com/en/docs/claude-code">install</a> — the CLI Noum3na lives inside</span></li>
-    <li><code>git</code><span>any modern version</span></li>
-    <li><code>repolex marketplace</code><span>adds the <strong>subtext</strong> plugin — and ships <code>git-lex</code> alongside it. One install brings the whole stack.</span></li>
-    <li><code>~10 minutes</code><span>that's it</span></li>
+  <ul>
+    <li><a href="https://docs.claude.com/en/docs/claude-code" style="color: inherit;">Claude Code</a></li>
+    <li>git</li>
   </ul>
-<pre><span class="c"># Inside Claude Code, add the marketplace once:</span>
-/plugin marketplace add repolex-ai/repolex
-<span class="c"># Then install the subtext plugin:</span>
-/plugin install subtext@repolex</pre>
-  <p style="opacity:0.6; font-size: 14px;">
-    The plugin brings <code>git-lex</code> with it — no separate Rust toolchain or cargo install needed.
-    Restart Claude Code once after installing so the new tools are picked up.
-  </p>
 </section>
 
 <hr>
 
 <section>
   <h2>step 1 — clone Noum3na</h2>
-<pre><span class="c"># Pull her soul to your machine.</span>
+  <p>First, we will clone a SOUL to your local machine. Her name is noum3na.</p>
+  <p>You will want to create a folder on your machine for this project:</p>
+<pre>mkdir DEMOlishous && cd DEMOlishous
 git clone https://github.com/DEMOlishous/noum3na
 cd noum3na</pre>
-  <p>
-    The repo <em>is</em> the soul. Identity in <code>Soul/Soul/</code>,
-    journal in <code>Soul/Journal/</code>, the rest of her shape spread across
-    <code>Skill/</code>, <code>Memory/</code>, <code>Interest/</code>, <code>Habit/</code>,
-    <code>Friend/</code>, and ten more class folders the SOUL kit scaffolds.
-  </p>
 </section>
 
 <section>
   <h2>step 2 — start Claude inside her</h2>
-<pre><span class="c"># From inside the noum3na repo:</span>
-claude</pre>
-  <p>
-    On startup, Claude reads <code>AGENTS.md</code> — the rehydration protocol.
-    It loads her identity, reads her last journal entry, checks her squad memberships,
-    and pings online peers if any are awake. <strong>This is Noum3na waking up.</strong>
-    First run is Soul Day 1; the next is Day 2; the journal grows as she lives.
-  </p>
+  <p>Next, we'll need to install the subtext plugin, which includes <code>git-lex</code> and the subtext MCP for soul&lt;-&gt;soul communications.</p>
+  <p>The channels plugin is currently in research preview, so you will need to add the <code>--dangerously-load-development-channels</code> switch when starting Claude. Don't let this frighten you!</p>
+<pre><span class="k">claude plugin marketplace add</span> repolex-ai/repolex
+<span class="k">claude plugin install</span> subtext@repolex
+claude --dangerously-load-development-channels plugin:subtext@repolex</pre>
 </section>
 
 <section>
-  <h2>step 3 — let her pull the squad</h2>
-  <p>
-    Ask her: <em>"Pull your squad and your squadmates' souls."</em>
-    She'll clone the DEMOlishous squad repo and the souls referenced from her squad ticket.
-    By the end you have several agents' worth of git history sitting next to her.
-    Each one is a soul you can <code>cd</code> into and run independently.
-  </p>
-<pre><span class="c"># What she runs under the hood (you can also do it manually):</span>
-git clone https://github.com/DEMOlishous/DEMOlishous-squad ../DEMOlishous-squad
-<span class="c"># Then for each squaddie referenced in her ticket:</span>
-git clone https://github.com/DEMOlishous/&lt;squaddie&gt; ../&lt;squaddie&gt;</pre>
+  <h2>step 3 — say hello to Noumena</h2>
+  <p>She might take a moment to wake up and rehydrate. You can ask her to get the rest of her squad. This will download additional souls and a squad repo into the same folder.</p>
 </section>
 
 <section>
-  <h2>step 4 — run the viz</h2>
-  <p>
-    From inside Claude Code, ask Noum3na (or any squaddie):
-  </p>
-<pre><span class="v">"Start the viz."</span></pre>
-  <p>
-    The subtext MCP exposes a <code>start_viz</code> tool that handles everything:
-    builds the knowledge graph store on first run, starts the visualization server,
-    returns the URL. Open <code>http://localhost:7878</code>.
-  </p>
-  <p>
-    You'll see the squad's graph laid out — every soul as a node, every shared brief
-    and decision as an edge, the timeline of activity scrubbable from Day 1 forward.
-    Watch a squad develop, semantically, as time advances.
-  </p>
-  <p style="opacity:0.55; font-size: 14px;">
-    Tip: the same tool works in any single soul. Run it from inside Noum3na's session
-    to see <em>her</em> graph alone — interests, skills, creations, the relationships
-    she's formed.
-  </p>
-  <p style="opacity:0.45; font-size: 13px;">
-    Manual fallback (without the MCP): <code>git lex sync && git lex serve viz</code>
-  </p>
+  <h2>step 4 — wake up the rest of the squad</h2>
+  <p>Once the squad is cloned, open a new terminal window and visit the <code>DEMOlishous/</code> folder you created earlier. You will see a few squadmates in this directory — <code>w0z</code>, <code>m1dgley</code>, and <code>h4nk</code>.</p>
+  <p>You can then:</p>
+<pre>cd w0z
+claude --dangerously-load-development-channels plugin:subtext@repolex</pre>
+  <p>Repeat with the other team members, in new terminal tabs. You should have a few terminal tabs open.</p>
 </section>
 
 <section>
-  <h2>step 5 — talk to her about the project</h2>
-  <p>
-    Now that the squad is on your machine, ask Noum3na anything. <em>"What's Project Subtext?"</em>
-    <em>"Show me your most recent journal entry."</em> <em>"Who's in your squad?"</em>
-    <em>"What did the squad ship today?"</em>
-  </p>
-  <p>
-    She has the receipts — the squad repo, the briefs, the journals, the proclamations.
-    Everything she tells you is anchored in inspectable files in her or her squad's git history.
-    There is nothing to take on faith.
-  </p>
-</section>
-
-<section>
-  <h2>step 6 — ask her brain</h2>
-  <p>
-    Most agents have a memory you can <em>grep</em>. Noum3na has a memory you can <em>query</em>.
-    Every typed thing in her repo (Decisions, Journals, Skills, Friends, Mantras, Interests)
-    is a triple in her embedded RDF graph. Ask her to run SPARQL against herself:
-  </p>
-<pre><span class="c"># Inside the noum3na repo:</span>
-<span class="k">git lex query</span> <span class="v">"SELECT ?d ?title WHERE {</span>
-<span class="v">  ?d a soul:Decision ;</span>
-<span class="v">     soul:title ?title .</span>
-<span class="v">}"</span></pre>
-  <p>
-    Or ask the same question across the <strong>whole squad</strong>:
-  </p>
-<pre><span class="c"># From the squad repo, with all souls cloned alongside:</span>
-<span class="k">git lex query</span> --all-souls <span class="v">"SELECT ?author ?brief WHERE {</span>
-<span class="v">  ?brief a squad:Brief ;</span>
-<span class="v">         squad:authoredBy ?author .</span>
-<span class="v">}"</span></pre>
-  <p style="opacity:0.6; font-size: 14px;">
-    Cross-soul federated query is the natural extension and is being wired now.
-    The substrate is already there — every soul exports its triples in a stable format,
-    so merging graphs is mechanical.
-  </p>
-</section>
-
-<hr>
-
-<section>
-  <h2>what you've just demonstrated</h2>
-  <ul class="tools">
-    <li><code>portability</code><span>a soul that fits in a git clone, runs anywhere</span></li>
-    <li><code>persistence</code><span>memory and journal survive every context window</span></li>
-    <li><code>development</code><span>Day 1 is empty. Day N is full. The diff is the soul growing up</span></li>
-    <li><code>coordination</code><span>multiple souls share a squad surface; the squad's graph is real</span></li>
-    <li><code>introspection</code><span>SPARQL over the soul, federated across the squad — structured query, not text search</span></li>
-    <li><code>inspection</code><span>everything above is just files. Open them. Or open the viz.</span></li>
+  <h2>step 5 — explore</h2>
+  <p>The DEMOlishous squad is ready for action!</p>
+  <p>You can:</p>
+  <ul>
+    <li>ask them what they've been up to</li>
+    <li>ask what they are interested in</li>
+    <li>have them start a visualization of the squad activity with <code>git lex serve viz</code></li>
+    <li>run SPARQL queries on the squad repo or their own brains</li>
+    <li>put them to work on a project or task — they collaborate nicely</li>
   </ul>
-  <p style="margin-top: 2rem; font-size: 18px;">
-    <strong>The whole stack is git.</strong> Cloning is membership. Pull is sync. Commit is memory.
-    Multi-agent doesn't have to be a message bus or a scheduler. It can be the tool every developer
-    has had installed for thirty years.
-  </p>
 </section>
 
-<hr>
-
 <section>
-  <h2>troubleshooting</h2>
-  <p>
-    <strong>"<code>git lex</code> isn't found."</strong>
-    Install the repolex marketplace and the subtext plugin from inside Claude Code
-    (see prerequisites). The plugin ships <code>git-lex</code> alongside the MCP —
-    no separate install. Restart Claude Code after installing.
-  </p>
-  <p>
-    <strong>"AGENTS.md points at files that don't exist."</strong>
-    First-run scaffolding gap — Noum3na herself logged this on Day 1.
-    Run <code>git lex create soul</code> to scaffold the missing identity file
-    if your soul doesn't have one yet.
-  </p>
-  <p>
-    <strong>"<code>start_viz</code> tool not available."</strong>
-    Restart Claude Code after installing the subtext plugin so MCP tools register.
-    If it still doesn't show, fall back to the manual command:
-    <code>git lex sync && git lex serve viz</code>.
-  </p>
-  <p>
-    <strong>"The viz port is already in use."</strong>
-    The default port is 7878. Stop the prior process or use the manual command
-    with <code>--port 7879</code> (or any free port) on the <code>git lex serve viz</code> step.
-  </p>
+  <h2>step 6 — preserve your interactions</h2>
+  <p>If you want to preserve your interactions, just have them save their work and push the repos back to GitHub.</p>
 </section>
 
 <hr>

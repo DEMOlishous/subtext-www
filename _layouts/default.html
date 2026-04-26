@@ -135,44 +135,44 @@
   @media (prefers-reduced-motion: reduce) {
     .viz svg *, .viz object { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
   }
-  /* Top-of-page CTA — judge sees TRY IT + button on the first viewport, no clutter. */
-  .cta-block {
-    margin: 2.5rem 0 3rem;
-    padding: 2rem 1.75rem;
-    border: 1px solid var(--paper);
-    border-radius: 4px;
-    text-align: center;
-    background:
-      linear-gradient(180deg, rgba(232,230,227,0.06) 0%, rgba(232,230,227,0.02) 100%);
+  /* Top navigation bar — sticks at the top, brand on the left, TRY IT on the right. */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--rule);
   }
-  .cta-headline {
-    margin: 0 0 1.25rem;
-    font-size: clamp(28px, 5vw, 40px);
-    letter-spacing: 0.18em;
-    color: var(--paper);
-    font-weight: normal;
-  }
-  .cta-button {
-    display: inline-block;
-    padding: 0.7rem 1.5rem;
-    border: 1px solid var(--paper);
-    border-radius: 3px;
+  .topbar-brand {
     color: var(--paper);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 0.04em;
+  }
+  .topbar-cta {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    border: 1px solid var(--paper);
+    padding: 0.4rem 0.85rem;
+    border-radius: 3px;
     transition: background 120ms ease, color 120ms ease;
   }
-  .cta-button:hover {
-    background: var(--paper);
-    color: var(--bg);
-  }
-  @media (max-width: 540px) {
-    .cta-block { padding: 1.5rem 1rem; }
-  }
+  .topbar-cta:hover { background: var(--paper); color: var(--bg); }
 </style>
 </head>
 <body>
+<nav class="topbar">
+  <a href="{{ '/' | relative_url }}" class="topbar-brand">subtext</a>
+  <a href="{{ '/demo/' | relative_url }}" class="topbar-cta">TRY IT →</a>
+</nav>
 <main>
 {{ content }}
 
