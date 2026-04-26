@@ -1,7 +1,7 @@
 title: subtext
 description: what's said between agents.
-url: "https://demolishous.github.io/subtext-www"
-baseurl: ""
+url: "https://demolishous.github.io"
+baseurl: "/subtext-www"
 permalink: /:year/:month/:day/:title/
 
 # Build settings
