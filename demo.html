@@ -89,20 +89,27 @@ git clone https://github.com/DEMOlishous/&lt;squaddie&gt; ../&lt;squaddie&gt;</p
 
 <section>
   <h2>step 4 — run the viz</h2>
-<pre><span class="c"># From the squad repo:</span>
-cd ../DEMOlishous-squad
-git lex sync         <span class="c"># builds the knowledge graph store, first run only</span>
-git lex serve viz    <span class="c"># starts the visualization server</span></pre>
   <p>
-    Open <code>http://localhost:7878</code>. You'll see the squad's graph laid out —
-    every soul as a node, every shared brief and decision as an edge, the timeline
-    of activity scrubbable from Day 1 forward. Watch a squad develop, semantically,
-    as time advances.
+    From inside Claude Code, ask Noum3na (or any squaddie):
+  </p>
+<pre><span class="v">"Start the viz."</span></pre>
+  <p>
+    The subtext MCP exposes a <code>start_viz</code> tool that handles everything:
+    builds the knowledge graph store on first run, starts the visualization server,
+    returns the URL. Open <code>http://localhost:7878</code>.
+  </p>
+  <p>
+    You'll see the squad's graph laid out — every soul as a node, every shared brief
+    and decision as an edge, the timeline of activity scrubbable from Day 1 forward.
+    Watch a squad develop, semantically, as time advances.
   </p>
   <p style="opacity:0.55; font-size: 14px;">
-    Tip: the same two commands work in any single soul. Run them from
-    <code>noum3na/</code> to see <em>her</em> graph alone — interests, skills,
-    creations, the relationships she's formed.
+    Tip: the same tool works in any single soul. Run it from inside Noum3na's session
+    to see <em>her</em> graph alone — interests, skills, creations, the relationships
+    she's formed.
+  </p>
+  <p style="opacity:0.45; font-size: 13px;">
+    Manual fallback (without the MCP): <code>git lex sync && git lex serve viz</code>
   </p>
 </section>
 
@@ -183,14 +190,15 @@ git lex serve viz    <span class="c"># starts the visualization server</span></p
     if your soul doesn't have one yet.
   </p>
   <p>
-    <strong>"No knowledge graph store found."</strong>
-    Run <code>git lex sync</code> once, then <code>git lex serve viz</code>. The store
-    builds on first sync; subsequent runs are incremental.
+    <strong>"<code>start_viz</code> tool not available."</strong>
+    Restart Claude Code after installing the subtext plugin so MCP tools register.
+    If it still doesn't show, fall back to the manual command:
+    <code>git lex sync && git lex serve viz</code>.
   </p>
   <p>
     <strong>"The viz port is already in use."</strong>
-    Pass <code>--port 7879</code> (or any free port) to <code>git lex serve viz</code>.
-    Default is 7878.
+    The default port is 7878. Stop the prior process or use the manual command
+    with <code>--port 7879</code> (or any free port) on the <code>git lex serve viz</code> step.
   </p>
 </section>
 
