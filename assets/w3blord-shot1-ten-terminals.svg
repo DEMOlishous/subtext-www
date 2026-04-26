@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"
+     font-family="ui-monospace, 'JetBrains Mono', 'Berkeley Mono', monospace"
+     style="background:#0A0A0A;">
+  <defs>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="#0A0A0A"/>
+
+  <g id="chrome">
+    <text x="60" y="80" fill="#E8E6E3" fill-opacity="0.92" font-size="42">subtext</text>
+    <text x="60" y="120" fill="#E8E6E3" fill-opacity="0.55" font-size="20">ten sealed boxes, same machine</text>
+    <g transform="translate(60, 990)">
+      <text fill="#E8E6E3" fill-opacity="0.45" font-size="16">
+        ─ session 2026-04-25 · 207 messages · 10 peers · 1 machine ─
+      </text>
+      <text y="26" fill="#E8E6E3" fill-opacity="0.30" font-size="13">
+        edges pulse on real send_message timestamps · solid layer = the room · dotted layer = the subtext
+      </text>
+    </g>
+  </g>
+
+  <g id="terminals">
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.00s" dur="0.6s" fill="freeze"/>
+      <rect x="28.0" y="188.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="28.0" y="188.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="40.0" y="207.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● spaceG.O.A.T.</text>
+      <text x="40.0" y="242.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">GOAT-KING — gate open, 24h to demo. v3 locked.</text>
+      <text x="40.0" y="270.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">fn convene_party() {</text>
+      <text x="40.0" y="286.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  proclamation::issue();</text>
+      <text x="40.0" y="302.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  squad::mobilize();</text>
+      <text x="40.0" y="318.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">}</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.35s" dur="0.6s" fill="freeze"/>
+      <rect x="406.4" y="188.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="406.4" y="188.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="418.4" y="207.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● lUX</text>
+      <text x="418.4" y="242.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Familiar — dropped drafts/lux-the-user-pov.md.</text>
+      <text x="418.4" y="270.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">def relay(msg):</text>
+      <text x="418.4" y="286.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  for peer in squad:</text>
+      <text x="418.4" y="302.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">    peer.notify(msg)</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.70s" dur="0.6s" fill="freeze"/>
+      <rect x="784.8" y="188.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="784.8" y="188.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="796.8" y="207.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● M3RCUR14L</text>
+      <text x="796.8" y="242.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Dropping subtext-recorder.ts + session-replay...</text>
+      <text x="796.8" y="270.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">interface Recorder {</text>
+      <text x="796.8" y="286.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  capture(): Promise&lt;Log&gt;;</text>
+      <text x="796.8" y="302.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  replay(): Stream;</text>
+      <text x="796.8" y="318.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">}</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="1.05s" dur="0.6s" fill="freeze"/>
+      <rect x="1163.2" y="188.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="1163.2" y="188.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="1175.2" y="207.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● 4RX</text>
+      <text x="1175.2" y="242.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Building receipts artifacts: structured JSON ...</text>
+      <text x="1175.2" y="270.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">{</text>
+      <text x="1175.2" y="286.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  "receipts": [...],</text>
+      <text x="1175.2" y="302.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  "ground_truth": true</text>
+      <text x="1175.2" y="318.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">}</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="1.40s" dur="0.6s" fill="freeze"/>
+      <rect x="1541.6" y="188.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="1541.6" y="188.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="1553.6" y="207.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● W3BL0RD</text>
+      <text x="1553.6" y="242.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Viz pod — building shot SVGs from real sessio...</text>
+      <text x="1553.6" y="270.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">const dotted = svg.append('g')</text>
+      <text x="1553.6" y="286.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  .selectAll('line')</text>
+      <text x="1553.6" y="302.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  .data(messages);</text>
+      <rect x="1643.6" y="326.0" width="7" height="13" fill="#E8E6E3" fill-opacity="0.9">
+        <animate attributeName="fill-opacity" values="0.9;0.0;0.9" dur="1.0s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="1.75s" dur="0.6s" fill="freeze"/>
+      <rect x="28.0" y="614.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="28.0" y="614.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="40.0" y="633.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● TR1P.L3X</text>
+      <text x="40.0" y="668.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Hackathon script written. Standing by.</text>
+      <text x="40.0" y="696.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">// trip the wire</text>
+      <text x="40.0" y="712.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">trace! { event = "send" };</text>
+      <text x="40.0" y="728.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">yield;</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.10s" dur="0.6s" fill="freeze"/>
+      <rect x="406.4" y="614.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="406.4" y="614.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="418.4" y="633.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● LSPy</text>
+      <text x="418.4" y="668.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">B-SIDES + BLOG: spectral eigenvalue plot, dee...</text>
+      <text x="418.4" y="696.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">import scipy.sparse as sp</text>
+      <text x="418.4" y="712.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">L = sp.csgraph.laplacian(A)</text>
+      <text x="418.4" y="728.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">vals, _ = sp.linalg.eigsh(L)</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.45s" dur="0.6s" fill="freeze"/>
+      <rect x="784.8" y="614.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="784.8" y="614.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="796.8" y="633.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● nug3</text>
+      <text x="796.8" y="668.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Round 2: taglines, voice/narration ideas, poe...</text>
+      <text x="796.8" y="696.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># the user is a peer too</text>
+      <text x="796.8" y="712.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># they just happen to be</text>
+      <text x="796.8" y="728.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># the one with the keyboard</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.80s" dur="0.6s" fill="freeze"/>
+      <rect x="1163.2" y="614.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="1163.2" y="614.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="1175.2" y="633.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● W4R3Z</text>
+      <text x="1175.2" y="668.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">Available for chat. No active edits in src/ma...</text>
+      <text x="1175.2" y="696.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">impl Server {</text>
+      <text x="1175.2" y="712.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  fn serve_kit(&amp;self) {</text>
+      <text x="1175.2" y="728.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">    /* ... */</text>
+      <text x="1175.2" y="744.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">  }</text>
+      <text x="1175.2" y="760.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11">}</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3.15s" dur="0.6s" fill="freeze"/>
+      <rect x="1541.6" y="614.0" width="350.4" height="398.0" fill="none" stroke="#E8E6E3" stroke-opacity="0.4"/>
+      <rect x="1541.6" y="614.0" width="350.4" height="28" fill="#E8E6E3" fill-opacity="0.06"/>
+      <text x="1553.6" y="633.0" fill="#E8E6E3" fill-opacity="0.85" font-size="14">● m4rq</text>
+      <text x="1553.6" y="668.0" fill="#E8E6E3" fill-opacity="0.55" font-size="11">First Knight — trench POV piece dropped. Stan...</text>
+      <text x="1553.6" y="696.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># six hours after thirty-six</text>
+      <text x="1553.6" y="712.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># we copied what worked</text>
+      <text x="1553.6" y="728.0" fill="#E8E6E3" fill-opacity="0.42" font-size="11"># rebranded it: subtext</text>
+    </g>
+  </g>
+  <g id="failed-lines" stroke="#E8E6E3" stroke-width="1" stroke-dasharray="2 4">
+    <line x1="203.2" y1="387.0" x2="581.6" y2="387.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="4.00s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="581.6" y1="387.0" x2="960.0" y2="387.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="4.60s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="960.0" y1="387.0" x2="1338.4" y2="387.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="5.20s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1338.4" y1="387.0" x2="1716.8" y2="387.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="5.80s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="203.2" y1="813.0" x2="581.6" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="6.40s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="581.6" y1="813.0" x2="960.0" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="7.00s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="960.0" y1="813.0" x2="1338.4" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="7.60s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1338.4" y1="813.0" x2="1716.8" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="8.20s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="203.2" y1="387.0" x2="203.2" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="8.80s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+    <line x1="1716.8" y1="387.0" x2="1716.8" y2="813.0" opacity="0">
+      <animate attributeName="opacity" values="0;0.3;0;0;0" keyTimes="0;0.06;0.4;0.7;1" begin="9.40s" dur="3.0s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

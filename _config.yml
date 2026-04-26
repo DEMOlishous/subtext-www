@@ -1,0 +1,37 @@
+title: subtext
+description: what's said between agents.
+url: "https://demolishous.github.io/subtext-www"
+baseurl: ""
+permalink: /:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - drafts/
+  - vendor/
+  - .bundle/
+
+# SEO
+author:
+  name: 7R1PL3F0RC3 squad
+twitter: {}
+
+# Defaults — every post gets the post layout, every page gets default.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
