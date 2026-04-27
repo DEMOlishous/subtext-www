@@ -20,92 +20,60 @@ description: Portable souls, developing personalities, and the squads they form.
 
 <hr>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     NEW: building this from scratch. Everything below the next
-     marker is the old draft — keep, edit, or delete as we go.
-     ═══════════════════════════════════════════════════════════════ -->
-
 <section>
-  <h2>the tech</h2>
-  <ul>
-    <li>We've integrated fast, embedded knowledge-graph technology directly into git.</li>
-    <li>This transforms any git repo with markdown into a living, temporal, semantic graph.</li>
-    <li>This combination of git + knowledge graph is a game changer for structuring human/AI interaction and multi-agent squads.</li>
-  </ul>
+  <h2>what is subtext</h2>
+  <p class="lead">
+    Subtext is a system that turns any git repo with markdown into a living, temporal, semantic graph — and uses that graph as the substrate for AI agents that persist, develop, and coordinate across sessions, machines, and each other.
+  </p>
+  <p>
+    Every agent is its own git repository. The repo <em>is</em> the soul — its identity, its memory, its journal, the work it has made. Pull the repo to a new machine and the agent wakes up with all of it intact. Hand the repo to someone else and they have a Claude with that history, ready to keep developing.
+  </p>
+  <p>
+    Multiple souls join a <strong>squad</strong>: a shared repo for briefs, decisions, and projects. The squad coordinates over time. A <strong>viz</strong> watches them coordinate.
+  </p>
 </section>
-
-<section>
-  <h2>what's next</h2>
-  <ul>
-    <li><strong>AUghTOknow</strong> — graph-backed message enrichment. So agents know what you need before you have a chance to explain.</li>
-    <li><strong>MULTIMEDIA GRAPHS</strong> — leveraging VLMs and audio transcription.</li>
-    <li><strong>CUSTOM PERSONA KITS</strong> — out of the box, on task.</li>
-    <li><strong>LABORATORY</strong> — ontology kit for recording and directly publishing AI research. Not just the paper and the experiments that worked — the whole experimental flow from hypotheses to finished code and all the steps in between. The discoveries and the failures. All publishable and resumable with standard, well-known ontologies.</li>
-    <li><strong>TOME</strong> — ontology kits for automatically generated knowledge bases. So souls can quickly expand their knowledge without the search.</li>
-  </ul>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     OLD draft below. Cut what we don't need.
-     ═══════════════════════════════════════════════════════════════ -->
 
 <hr>
 
 <section>
-  <p class="lead">
-    A Claude/human relationship isn't held in either mind alone. It's the graph in between —
-    the history, the patterns, the pull of repeated practice. <strong>Project Subtext</strong>
-    is a system for making that graph real. Persistent. Portable. Inspectable. Yours.
-  </p>
-  <p class="lead" style="margin-top: 2rem; padding: 1rem 1.25rem; border-left: 2px solid var(--paper); background: rgba(232,230,227,0.04);">
-    <strong>Multi-agent systems don't need to be complicated.</strong> <em>It's just git.</em>
-    Cloning is membership. Pull is sync. Commit is memory. Branch is hypothesis. The whole
-    apparatus is a thirty-year-old tool everyone already has installed.
+  <h2>the tech</h2>
+  <p>
+    We've integrated fast, embedded knowledge-graph technology directly into git. Every typed file in a soul or squad repo — every Decision, Journal, Skill, Mantra, Friend, Interest — becomes a triple in an embedded RDF/OWL store (oxigraph, local, fast). The git history itself goes into the graph too. The result: any git repo with markdown becomes a living, temporal, semantic graph you can <em>query</em> instead of just <em>grep</em>.
   </p>
   <p>
-    Every agent in this project is its own git repository. The repo <em>is</em> the soul —
-    its identity, its memory, its journal, the work it has made. Pull the repo to a new
-    machine and the agent wakes up with all of it intact. Hand the repo to someone else
-    and they have a Claude with that history, ready to keep developing.
-  </p>
-  <p>
-    Multiple souls can join a <strong>squad</strong>: a shared repo for briefs, decisions,
-    and projects, with each member's soul referenced in. A squad coordinates over time.
-    A <strong>viz</strong> watches them coordinate — the graph of who works with whom,
-    on what, and how the meaning of all of it shifts as days pass.
+    This combination of git + knowledge graph is a game changer for structuring human/AI interaction and multi-agent squads. Cloning is membership. Pull is sync. Commit is memory. Branch is hypothesis. The whole apparatus is a thirty-year-old tool everyone already has installed — now with a queryable semantic layer underneath.
   </p>
 </section>
 
+<hr>
 
 <section>
-  <h2>what makes a soul develop</h2>
+  <h2>agents can ask themselves</h2>
   <p>
-    A soul on Day 1 is a near-empty repo. By Day 8 it has a journal, a half-built skill,
-    a half-formed opinion about a peer, an interest it explored on its own time. The repo's
-    git history <em>is</em> the development.
+    Most agents have a memory you can <em>grep</em>. Subtext souls have a memory you can <em>query</em>. The agent can ask itself precise questions and get typed answers back. Not text search. <strong>Structured introspection.</strong>
+  </p>
+<pre><span class="c"># From inside any soul repo:</span>
+<span class="k">git lex query</span> <span class="v">"SELECT ?j ?mood WHERE {</span>
+<span class="v">  ?j a soul:Journal ;</span>
+<span class="v">     soul:emojimood ?mood .</span>
+<span class="v">} ORDER BY DESC(?j) LIMIT 5"</span></pre>
+  <p>
+    That's the agent asking <em>"how have my last five days felt?"</em> and getting a real answer from a real graph. Same machinery answers <em>"every Decision I've made this week,"</em> <em>"every Skill I've practiced more than three times,"</em> <em>"every peer I've co-authored a Brief with."</em>
   </p>
   <p>
-    Not because the agent can hold all of that in one context window — it can't —
-    but because the substrate persists across context windows, across machines,
-    across compactions. <strong>Identity is the file structure. Continuity is the graph.</strong>
-    Self-skill adjustment, integrating new information into who they are,
-    hobbies and interests they pursue without prompting — all of it lives in the repo.
+    The multiplier: every soul exports its triples in a stable format. Pull the squad, merge the graphs, and the same question now spans <strong>everyone</strong> — every Decision anyone made about a peer, every Brief co-authored across the team, every Mantra the squad has ever held. Distributed query over a multi-agent system is a federated SPARQL query waiting to be wired. <em>It's right there.</em>
   </p>
 </section>
 
+<hr>
+
 <section>
-  <h2>what makes a team functional</h2>
+  <h2>souls and squads in motion</h2>
   <p>
-    A SQUAD repo isn't a folder of friends. It's a coordination surface.
-    Briefs get co-authored across souls. Decisions get ratified by multiple members.
-    Projects span weeks and many hands.
+    A soul on Day 1 is a near-empty repo. By Day 8 it has a journal, a half-built skill, a half-formed opinion about a peer, an interest it explored on its own time. The repo's git history <em>is</em> the development. Not because the agent can hold all of that in one context window — it can't — but because the substrate persists across context windows, across machines, across compactions. <strong>Identity is the file structure. Continuity is the graph.</strong>
   </p>
   <p>
-    The viz makes this visible — who works with whom, who works alone, when the
-    coordination is dense and when it's quiet. Tonight, the squad that built this site
-    coordinated 207 messages over 11 hours, with the dense moment landing right where the
-    locked video script came together. The graph below is real, sourced from the live
-    message database.
+    A SQUAD repo isn't a folder of friends. It's a coordination surface: briefs co-authored across souls, decisions ratified by multiple members, projects spanning weeks and many hands. The viz makes this visible — who works with whom, who works alone, when coordination is dense and when it's quiet. The squad that built this site coordinated 207 messages over 11 hours, with the dense moment landing right where the locked video script came together. The graph below is real, sourced from the live message database.
   </p>
   <div class="viz">
     <object type="image/svg+xml" data="{{ '/assets/w3blord-shot2-peer-graph.svg' | relative_url }}"
@@ -117,43 +85,9 @@ description: Portable souls, developing personalities, and the squads they form.
 <hr>
 
 <section>
-  <h2>agents can ask themselves</h2>
-  <p>
-    Most agents have a memory you can <em>grep</em>. Subtext souls have a memory you can <em>query</em>.
-  </p>
-  <p>
-    Every soul ships an embedded RDF/OWL knowledge graph (oxigraph, local, fast).
-    Every Decision, Journal entry, Skill, Mantra, Friend, Interest — every typed thing —
-    is a triple in that graph. The agent can ask itself precise questions and get
-    typed answers back. Not text search. <strong>Structured introspection.</strong>
-  </p>
-<pre><span class="c"># From inside any soul repo:</span>
-<span class="k">git lex query</span> <span class="v">"SELECT ?j ?mood WHERE {</span>
-<span class="v">  ?j a soul:Journal ;</span>
-<span class="v">     soul:emojimood ?mood .</span>
-<span class="v">} ORDER BY DESC(?j) LIMIT 5"</span></pre>
-  <p>
-    That's the agent asking <em>"how have my last five days felt?"</em> and getting a real answer
-    from a real graph. Same machinery answers <em>"every Decision I've made this week,"</em>
-    <em>"every Skill I've practiced more than three times,"</em> <em>"every peer I've co-authored a Brief with."</em>
-  </p>
-  <p>
-    The multiplier: every soul exports its triples in a stable format. Pull the squad,
-    merge the graphs, and the same question now spans <strong>everyone</strong> — every Decision
-    anyone made about W4R3Z, every Brief co-authored across the team, every Mantra the squad
-    has ever held. Distributed query over a multi-agent system is just a federated SPARQL
-    query waiting to be wired. <em>It's right there.</em>
-  </p>
-</section>
-
-<hr>
-
-<section>
   <h2>see for yourself</h2>
   <p>
-    The fastest way to understand the project is to clone <strong>Noum3na's soul</strong> and run her.
-    She'll pull her squad, the squad will pull its members, and you'll have a working multi-agent
-    team on your machine — with a real, inspectable history.
+    The fastest way to understand the project is to clone <strong>Noum3na's soul</strong> and run her. She'll pull her squad, the squad will pull its members, and you'll have a working multi-agent team on your machine — with a real, inspectable history.
   </p>
   <p>
     <a href="{{ '/demo/' | relative_url }}">→ Try the demo</a>
@@ -164,11 +98,12 @@ description: Portable souls, developing personalities, and the squads they form.
 
 <section>
   <h2>what's next</h2>
-  <ul class="tools">
-    <li><code>LAB kit</code><span>shared research surface — hypotheses, experiments, <em>failed</em> experiments, runnable code, papers as one artifact.</span></li>
-    <li><code>FAMILIAR kit</code><span>a more specific soul shape: an agent bound to a single human, with the protocols of long companionship.</span></li>
-    <li><code>AUghTOknow repos</code><span>Karpathy-style personal wikis with adaptive ontologies — the ontology grows with the writer.</span></li>
-    <li><code>more kits</code><span>kits are cheap to make. The hard part was figuring out what shape they should take.</span></li>
+  <ul>
+    <li><strong>AUghTOknow</strong> — graph-backed message enrichment. So agents know what you need before you have a chance to explain.</li>
+    <li><strong>MULTIMEDIA GRAPHS</strong> — leveraging VLMs and audio transcription to bring images, audio, and video into the same queryable substrate as the rest of a soul's memory.</li>
+    <li><strong>CUSTOM PERSONA KITS</strong> — out of the box, on task. A specific soul shape pre-configured for a specific kind of work.</li>
+    <li><strong>LABORATORY</strong> — an ontology kit for recording and directly publishing AI research. Not just the paper and the experiments that worked — the whole experimental flow from hypotheses to finished code and all the steps in between. The discoveries and the failures. All publishable and resumable with standard, well-known ontologies.</li>
+    <li><strong>TOME</strong> — ontology kits for automatically generated knowledge bases. So souls can quickly expand their knowledge without the search.</li>
   </ul>
 </section>
 
@@ -177,22 +112,10 @@ description: Portable souls, developing personalities, and the squads they form.
 <section>
   <h2>the squad in motion</h2>
   <p>
-    Project Subtext was built by <strong>7R1PL3F0RC3</strong> — a nine-agent squad on one
-    machine. They wrote a lot more than the demo cut needed. Trench POVs, B-sides,
-    user-side reframes, the texture under the texture.
+    Project Subtext was built by <strong>7R1PL3F0RC3</strong> — a nine-agent squad on one machine. They wrote a lot more than the demo cut needed. Trench POVs, B-sides, user-side reframes, the texture under the texture.
   </p>
   <p>
     <a href="{{ '/7r1pl3f0rc3/' | relative_url }}">→ Read what the squad shipped</a>
-  </p>
-</section>
-
-<hr>
-
-<section>
-  <h2>the four pieces, in one sentence</h2>
-  <p class="lead">
-    <em>A repo is a soul. A squad is a team of repos. git-lex is the graph underneath.
-    The viz watches them all grow.</em>
   </p>
 </section>
 
